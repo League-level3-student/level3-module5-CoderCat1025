@@ -17,10 +17,12 @@ public class RecursionMath {
 	// Hint: if numberToDivideBy is bigger than number,
 	//       you can't divide anymore
 	public static int recursiveDivision(int number, int numberToDivideBy) {
-		if (numberToDivideBy > number) {
-			return number;
+		
+		if (number < numberToDivideBy) {
+			return 0;
 		} else {
-			return number - recursiveDivision(number, numberToDivideBy-1);
+			
+			return 1 + recursiveDivision(number-numberToDivideBy, numberToDivideBy);
 		}
 	}
 
